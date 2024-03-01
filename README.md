@@ -12,7 +12,7 @@ Code | https://github.com/cr0hn/vulnerable-node
 Issues | https://github.com/cr0hn/vulnerable-node/issues/ffgdfg
 Author | Daniel Garcia (cr0hn) - @ggdaniel
 
-# Support this project
+# Support this projec]
 
 Support this project (to solve issues, new features...) by applying the Github "Sponsor" button.
 
