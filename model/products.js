@@ -9,18 +9,52 @@ function list_products() {
     return db.many(q);
 }
 
+			/*
+			 *  Veracode Fix
+			 * <============>
+			 * Fix generated at: 12-02-2024 08:20:45
+			 * CWE ID: 89
+			 * Applied by: jmok@veracode.com
+			 */
+
+
+			/*
+			 *  Veracode Fix
+			 * <============>
+			 * Fix generated at: 12-02-2024 08:20:57
+			 * CWE ID: 89
+			 * Applied by: jmok@veracode.com
+			 */
+
+
 function getProduct(product_id) {
 
-    var q = "SELECT * FROM products WHERE id = '" + product_id + "';";
-
-    return db.one(q);
+    var q = "SELECT * FROM products WHERE id =?";
+    return db.one(q, [product_id]);
 }
+
+			/*
+			 *  Veracode Fix
+			 * <============>
+			 * Fix generated at: 12-02-2024 08:21:06
+			 * CWE ID: 89
+			 * Applied by: jmok@veracode.com
+			 */
+
+
+			/*
+			 *  Veracode Fix
+			 * <============>
+			 * Fix generated at: 12-02-2024 08:21:16
+			 * CWE ID: 89
+			 * Applied by: jmok@veracode.com
+			 */
+
 
 function search(query) {
 
-    var q = "SELECT * FROM products WHERE name ILIKE '%" + query + "%' OR description ILIKE '%" + query + "%';";
-
-    return db.many(q);
+    var q = "SELECT * FROM products WHERE name ILIKE? OR description ILIKE?;";
+    return db.many(q, [query, query]);
 
 }
 
