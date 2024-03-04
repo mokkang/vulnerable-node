@@ -1,0 +1,2279 @@
+{
+   "_links": {
+      "root": {
+         "href": "/",
+         "name": "",
+         "templated": false
+      },
+      "self": {
+         "href": "/scans/9a2b0993-d305-4d52-9223-e95dc12376d5/findings",
+         "name": "",
+         "templated": false
+      },
+      "help": {
+         "href": "https://help.veracode.com/reader/tS9CaFwL4_lbIEWWomsJoA/ovfZGgu96UINQxIuTqRDwg",
+         "name": "",
+         "templated": false
+      },
+      "create": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "start": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "details": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "upload": {
+         "href": "",
+         "name": "",
+         "templated": false
+      },
+      "cancel": {
+         "href": "",
+         "name": "",
+         "templated": false
+      }
+   },
+   "scan_id": "9a2b0993-d305-4d52-9223-e95dc12376d5",
+   "scan_status": "SUCCESS",
+   "message": "Scan successful. Results size: 108614 bytes",
+   "modules": [
+      "JS files within vulnerable-node.zip"
+   ],
+   "modules_count": 1,
+   "findings": [
+      {
+         "title": "pgpromise.Database.one",
+         "issue_id": 1014,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to pgpromise.Database.one() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "model/products.js",
+               "line": 33,
+               "function_name": "getProduct",
+               "qualified_function_name": "getProduct",
+               "function_prototype": "getProduct(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "505210151",
+            "prototype_hash": "1315905793",
+            "flaw_hash": "435648834",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "2199272779",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "getProduct",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "32",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "getProduct",
+                        "FunctionPrototype": "getProduct(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "UNKNOWN",
+                        "SourceLine": "-1",
+                        "SourceFileId": "-1",
+                        "StatementText": {},
+                        "VarNames": "express::Request(/**X-VC scoperef targetid=\"68390\" */!req/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "pgpromise.Database.many",
+         "issue_id": 1012,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to pgpromise.Database.many() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "model/products.js",
+               "line": 57,
+               "function_name": "search",
+               "qualified_function_name": "search",
+               "function_prototype": "search(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3674131783",
+            "prototype_hash": "3499624658",
+            "flaw_hash": "435648834",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "2199272779",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "pgpromise.Database.one",
+         "issue_id": 1015,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to pgpromise.Database.one() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "model/products.js",
+               "line": 74,
+               "function_name": "purchase",
+               "qualified_function_name": "purchase",
+               "function_prototype": "purchase(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3760487543",
+            "prototype_hash": "3259115360",
+            "flaw_hash": "261884399",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1176028798",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "purchase",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "73",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "purchase",
+                        "FunctionPrototype": "purchase(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "purchase",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "73",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"62809\" */q/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "purchase",
+                        "FunctionPrototype": "purchase(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "2",
+                        "FunctionName": "purchase",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "62",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"62807\" */cart/**X-VC /scoperef */./**X-VC scoperef targetid=\"59360\" */price/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "purchase",
+                        "FunctionPrototype": "purchase(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "3",
+                        "FunctionName": "purchase",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "60",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"62807\" */var cart : any/**X-VC /defscope */",
+                        "QualifiedFunctionName": "purchase",
+                        "FunctionPrototype": "purchase(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "4",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "136",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66908\" */cart/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "5",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "115",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"59360\" */price/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "6",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "114",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66903\" */req/**X-VC /scoperef */./**X-VC scoperef targetid=\"64515\" */session/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "7",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "113",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"63055\" */product_name/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "8",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "112",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"63165\" */product_id/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "9",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "111",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"62869\" */phone/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "10",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "110",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"62887\" */ship_date/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "11",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "109",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"58080\" */address/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "12",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "108",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"66907\" */params/**X-VC /scoperef */./**X-VC scoperef targetid=\"63164\" */mail/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "13",
+                        "FunctionName": "lambda_13",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "88",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"66903\" */var req : express::Request/**X-VC /defscope */",
+                        "QualifiedFunctionName": "lambda_13",
+                        "FunctionPrototype": "lambda_13(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "14",
+                        "FunctionName": "!main",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "88",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"65190\" */router/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "15",
+                        "FunctionName": "!main",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "4",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "express::Router(/**X-VC scoperef targetid=\"65189\" */express/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "pgpromise.Database.many",
+         "issue_id": 1011,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to pgpromise.Database.many() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "model/products.js",
+               "line": 82,
+               "function_name": "get_purcharsed",
+               "qualified_function_name": "get_purcharsed",
+               "function_prototype": "get_purcharsed(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3590296173",
+            "prototype_hash": "765781476",
+            "flaw_hash": "261884399",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1176028798",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "get_purcharsed",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "81",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "get_purcharsed",
+                        "FunctionPrototype": "get_purcharsed(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "get_purcharsed",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "81",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"63181\" */q/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "get_purcharsed",
+                        "FunctionPrototype": "get_purcharsed(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "2",
+                        "FunctionName": "get_purcharsed",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "79",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"63179\" */username/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "get_purcharsed",
+                        "FunctionPrototype": "get_purcharsed(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "3",
+                        "FunctionName": "get_purcharsed",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "77",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"63179\" */var username : any/**X-VC /defscope */",
+                        "QualifiedFunctionName": "get_purcharsed",
+                        "FunctionPrototype": "get_purcharsed(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "4",
+                        "FunctionName": "lambda_4",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "27",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"65677\" */req/**X-VC /scoperef */./**X-VC scoperef targetid=\"64515\" */session/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "lambda_4",
+                        "FunctionPrototype": "lambda_4(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "5",
+                        "FunctionName": "lambda_4",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "23",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"65677\" */var req : express::Request/**X-VC /defscope */",
+                        "QualifiedFunctionName": "lambda_4",
+                        "FunctionPrototype": "lambda_4(: any,  : express::Request,  : express::Response,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "6",
+                        "FunctionName": "!main",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "23",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"65190\" */router/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "7",
+                        "FunctionName": "!main",
+                        "SourceFile": "routes/products.js",
+                        "SourceLine": "4",
+                        "SourceFileId": "9",
+                        "StatementText": {},
+                        "VarNames": "express::Router(/**X-VC scoperef targetid=\"65189\" */express/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "pgpromise.Database.one",
+         "issue_id": 1013,
+         "gob": "B",
+         "severity": 4,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+         "cwe_id": "89",
+         "display_text": "\u003cspan\u003eThis database query contains a SQL injection flaw.  The call to pgpromise.Database.one() constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database. \u003c/span\u003e \u003cspan\u003eAvoid dynamically constructing SQL queries.  Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/89.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/SQL_Injection\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "model/auth.js",
+               "line": 9,
+               "function_name": "do_auth",
+               "qualified_function_name": "do_auth",
+               "function_prototype": "do_auth(: any,  : any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1816947111",
+            "prototype_hash": "3540498737",
+            "flaw_hash": "261884399",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1176028798",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "1522093433",
+            "cause_hash2_ordinal": "3"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/89.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1022,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/search.ejs",
+               "line": 3,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1383966971",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3442322166",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1732126437",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "438364638",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1027,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/search.ejs",
+               "line": 24,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1383966971",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 3,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/search.ejs",
+                        "SourceLine": "23",
+                        "SourceFileId": "25",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1030,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/search.ejs",
+               "line": 25,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1383966971",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 3,
+            "flaw_hash_ordinal": 2,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/search.ejs",
+                        "SourceLine": "24",
+                        "SourceFileId": "25",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1033,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/search.ejs",
+               "line": 26,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1383966971",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 3,
+            "flaw_hash_ordinal": 3,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/search.ejs",
+                        "SourceLine": "25",
+                        "SourceFileId": "25",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1024,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 8,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "7",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1029,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 10,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 2,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "9",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1032,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 11,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 3,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "10",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1026,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 12,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 4,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "11",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1035,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 48,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 5,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "47",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1021,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 50,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 6,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "49",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1018,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/product_detail.ejs",
+               "line": 51,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1622606162",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3561377194",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 7,
+            "cause_hash": "3693385549",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4013394447",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/product_detail.ejs",
+                        "SourceLine": "50",
+                        "SourceFileId": "23",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1017,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/login.ejs",
+               "line": 17,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1268709238",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3442322166",
+            "flaw_hash_count": 2,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1732126437",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "438364638",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1020,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/login.ejs",
+               "line": 22,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1268709238",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3442322166",
+            "flaw_hash_count": 2,
+            "flaw_hash_ordinal": 2,
+            "cause_hash": "1732126437",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "438364638",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "jQuery",
+         "issue_id": 1006,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to jQuery() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/layout.ejs",
+               "line": 80,
+               "function_name": "lambda_7",
+               "qualified_function_name": "lambda_7",
+               "function_prototype": "lambda_7(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "437162712",
+            "prototype_hash": "2538765455",
+            "flaw_hash": "2539287113",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1435084053",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "2595310097",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "lambda_7",
+                        "SourceFile": "views/layout.ejs",
+                        "SourceLine": "79",
+                        "SourceFileId": "21",
+                        "StatementText": {},
+                        "VarNames": "(\"\u003cdiv class=\\\\\\\"modal fade in\\\\\\\" tabindex=\\\\\\\"-1\\\\\\\" role=\\\\\\\"dialog\\\\\\\" style=\\\\\\\"display: block;\\\\\\\"\u003e\u003cdiv class=\\\\\\\"modal-dialog\\\\\\\"\u003e\u003cdiv class=\\\\\\\"modal-content\\\\\\\"\u003e\u003cdiv class=\\\\\\\"modal-header\\\\\\\"\u003e\u003cbutton type=\\\\\\\"button\\\\\\\" class=\\\\\\\"close\\\\\\\" data-dismiss=\\\\\\\"modal\\\\\\\" aria-label=\\\\\\\"Close\\\\\\\"\u003e\u003cspan aria-hidden=\\\\\\\"true\\\\\\\"\u003e\\303\\227\u003c/span\u003e\u003c/button\u003e\u003ch4 class=\\\\\\\"modal-title\\\\\\\"\u003e\" + /**X-VC scoperef targetid=\"70260\" */data/**X-VC /scoperef */./**X-VC scoperef targetid=\"58422\" */message/**X-VC /scoperef */ + \"\u003c/h4\u003e\u003c/div\u003e\u003cdiv class=\\\\\\\"modal-footer\\\\\\\"\u003e\u003cbutton type=\\\\\\\"button\\\\\\\" class=\\\\\\\"btn btn-success\\\\\\\" data-dismiss=\\\\\\\"modal\\\\\\\"\u003eOk\u003c/button\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\")",
+                        "QualifiedFunctionName": "lambda_7",
+                        "FunctionPrototype": "lambda_7(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "lambda_6",
+                        "SourceFile": "views/layout.ejs",
+                        "SourceLine": "73",
+                        "SourceFileId": "21",
+                        "StatementText": {},
+                        "VarNames": "jQuery::ajax(/**X-VC scoperef targetid=\"69902\" */$/**X-VC /scoperef */, /**X-VC scoperef targetid=\"70141\" */r/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "lambda_6",
+                        "FunctionPrototype": "lambda_6(: any,  : any, ...) : any"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "jQueryResult.html",
+         "issue_id": 1005,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to jQueryResult.html() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/layout.ejs",
+               "line": 84,
+               "function_name": "lambda_8",
+               "qualified_function_name": "lambda_8",
+               "function_prototype": "lambda_8(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3934115090",
+            "prototype_hash": "2341487499",
+            "flaw_hash": "3103718343",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "2323626286",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "438364638",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "lambda_8",
+                        "SourceFile": "views/layout.ejs",
+                        "SourceLine": "83",
+                        "SourceFileId": "21",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "lambda_8",
+                        "FunctionPrototype": "lambda_8(: any,  : any, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "lambda_6",
+                        "SourceFile": "views/layout.ejs",
+                        "SourceLine": "73",
+                        "SourceFileId": "21",
+                        "StatementText": {},
+                        "VarNames": "jQuery::ajax(/**X-VC scoperef targetid=\"69902\" */$/**X-VC /scoperef */, /**X-VC scoperef targetid=\"70141\" */r/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "lambda_6",
+                        "FunctionPrototype": "lambda_6(: any,  : any, ...) : any"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1023,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 26,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "25",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1028,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 27,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 2,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "26",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1031,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 28,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 3,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "27",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1025,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 29,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 4,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "28",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1034,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 30,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 5,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "29",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1019,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 31,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 6,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "30",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "__vc_output_raw",
+         "issue_id": 1016,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)",
+         "cwe_id": "80",
+         "display_text": "\u003cspan\u003eThis call to __vc_output_raw() contains a cross-site scripting (XSS) flaw.  The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim's browser.  XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis. \u003c/span\u003e \u003cspan\u003eUse contextual escaping on all untrusted data before using it to construct any portion of an HTTP response.  The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc.  Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md. In addition, as a best practice, always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/79.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/xss/\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "views/bought_products.ejs",
+               "line": 32,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "3948109576",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2748810828",
+            "flaw_hash_count": 7,
+            "flaw_hash_ordinal": 7,
+            "cause_hash": "438780725",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "752991195",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "!main",
+                        "SourceFile": "views/bought_products.ejs",
+                        "SourceLine": "31",
+                        "SourceFileId": "18",
+                        "StatementText": {},
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "!main",
+                        "SourceFile": "model/products.js",
+                        "SourceLine": "0",
+                        "SourceFileId": "6",
+                        "StatementText": {},
+                        "VarNames": "pgpromise(null, /**X-VC scoperef targetid=\"62427\" */config/**X-VC /scoperef */./**X-VC scoperef targetid=\"58918\" */db/**X-VC /scoperef */./**X-VC scoperef targetid=\"58690\" */connectionString/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/80.html"
+      },
+      {
+         "title": "express.Response.redirect",
+         "issue_id": 1010,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "URL Redirection to Untrusted Site ('Open Redirect')",
+         "cwe_id": "601",
+         "display_text": "\u003cspan\u003eThis call to express.Response.redirect() contains a URL redirection to untrusted site flaw.  Writing untrusted input into a URL value could cause the web application to redirect the request to the specified URL, leading to phishing attempts to steal user credentials.\u003c/span\u003e \u003cspan\u003eAlways validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible. \u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/601.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "routes/login_check.js",
+               "line": 6,
+               "function_name": "check_logged",
+               "qualified_function_name": "check_logged",
+               "function_prototype": "check_logged(: any,  : express::Request,  : express::Response, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "234199283",
+            "prototype_hash": "530928601",
+            "flaw_hash": "1771616157",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "4285874228",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "685726286",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {
+            "stack_dump": [
+               {
+                  "Frame": [
+                     {
+                        "FrameId": "0",
+                        "FunctionName": "check_logged",
+                        "SourceFile": "routes/login_check.js",
+                        "SourceLine": "5",
+                        "SourceFileId": "8",
+                        "StatementText": {},
+                        "VarNames": "(\"/login?returnurl=\" + /**X-VC scoperef targetid=\"65001\" */req/**X-VC /scoperef */./**X-VC scoperef targetid=\"63670\" */url/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "check_logged",
+                        "FunctionPrototype": "check_logged(: any,  : express::Request,  : express::Response, ...) : any"
+                     },
+                     {
+                        "FrameId": "1",
+                        "FunctionName": "check_logged",
+                        "SourceFile": "routes/login_check.js",
+                        "SourceLine": "5",
+                        "SourceFileId": "8",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"65001\" */req/**X-VC /scoperef */./**X-VC scoperef targetid=\"63670\" */url/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "check_logged",
+                        "FunctionPrototype": "check_logged(: any,  : express::Request,  : express::Response, ...) : any"
+                     },
+                     {
+                        "FrameId": "2",
+                        "FunctionName": "check_logged",
+                        "SourceFile": "routes/login_check.js",
+                        "SourceLine": "1",
+                        "SourceFileId": "8",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC defscope id=\"65001\" */var req : express::Request/**X-VC /defscope */",
+                        "QualifiedFunctionName": "check_logged",
+                        "FunctionPrototype": "check_logged(: any,  : express::Request,  : express::Response, ...) : any"
+                     },
+                     {
+                        "FrameId": "3",
+                        "FunctionName": "!main",
+                        "SourceFile": "UNKNOWN",
+                        "SourceLine": "-1",
+                        "SourceFileId": "-1",
+                        "StatementText": {},
+                        "VarNames": "/**X-VC scoperef targetid=\"69681\" */!req/**X-VC /scoperef */",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     },
+                     {
+                        "FrameId": "4",
+                        "FunctionName": "!main",
+                        "SourceFile": "UNKNOWN",
+                        "SourceLine": "-1",
+                        "SourceFileId": "-1",
+                        "StatementText": {},
+                        "VarNames": "express::Request(/**X-VC scoperef targetid=\"69681\" */!req/**X-VC /scoperef */)",
+                        "QualifiedFunctionName": "!main",
+                        "FunctionPrototype": "!main() : void"
+                     }
+                  ]
+               }
+            ]
+         },
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/601.html"
+      },
+      {
+         "title": "console.error",
+         "issue_id": 1007,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Improper Output Neutralization for Logs",
+         "cwe_id": "117",
+         "display_text": "\u003cspan\u003eThis call to console.error() could result in a log forging attack.  Writing untrusted data into a log file allows an attacker to forge log entries or inject malicious content into log files.  Corrupted log files can be used to cover an attacker's tracks or as a delivery mechanism for an attack on a log viewing or processing utility.  For example, if a web administrator uses a browser-based utility to review logs, a cross-site scripting attack might be possible. \u003c/span\u003e \u003cspan\u003eAvoid directly embedding user input in log files when possible.  Sanitize untrusted data used to construct log entries by using a safe logging mechanism such as the OWASP ESAPI Logger, which will automatically remove unexpected carriage returns and line feeds and can be configured to use HTML entity encoding for non-alphanumeric data.  Alternatively, some of the XSS escaping functions from the OWASP Java Encoder project will also sanitize CRLF sequences.  Only create a custom blocklist when absolutely necessary.  Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/117.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://owasp.org/www-community/attacks/Log_Injection\"\u003eOWASP\u003c/a\u003e \u003ca href=\"https://docs.veracode.com/r/review_cleansers?tocId=nYnZqAenFFZmB75MQrZwuA\"\u003eSupported Cleansers\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "routes/login.js",
+               "line": 60,
+               "function_name": "lambda_2",
+               "qualified_function_name": "lambda_2",
+               "function_prototype": "lambda_2(: any,  : express::Request,  : express::Response, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "2067895043",
+            "prototype_hash": "2230311144",
+            "flaw_hash": "1494501328",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1662147253",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "2726216631",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/117.html"
+      },
+      {
+         "title": "express.Response.redirect",
+         "issue_id": 1008,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "URL Redirection to Untrusted Site ('Open Redirect')",
+         "cwe_id": "601",
+         "display_text": "\u003cspan\u003eThis call to express.Response.redirect() contains a URL redirection to untrusted site flaw.  Writing untrusted input into a URL value could cause the web application to redirect the request to the specified URL, leading to phishing attempts to steal user credentials.\u003c/span\u003e \u003cspan\u003eAlways validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible. \u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/601.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "routes/login.js",
+               "line": 71,
+               "function_name": "lambda_3",
+               "qualified_function_name": "lambda_3",
+               "function_prototype": "lambda_3(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "2329360093",
+            "prototype_hash": "2845833063",
+            "flaw_hash": "1270077406",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "571301151",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "3808817713",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/601.html"
+      },
+      {
+         "title": "express.Response.redirect",
+         "issue_id": 1009,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "URL Redirection to Untrusted Site ('Open Redirect')",
+         "cwe_id": "601",
+         "display_text": "\u003cspan\u003eThis call to express.Response.redirect() contains a URL redirection to untrusted site flaw.  Writing untrusted input into a URL value could cause the web application to redirect the request to the specified URL, leading to phishing attempts to steal user credentials.\u003c/span\u003e \u003cspan\u003eAlways validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible. \u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/601.html\"\u003eCWE\u003c/a\u003e \u003ca href=\"https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html\"\u003eOWASP\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "routes/login.js",
+               "line": 74,
+               "function_name": "lambda_4",
+               "qualified_function_name": "lambda_4",
+               "function_prototype": "lambda_4(: any,  : any, ...) : any",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1454796722",
+            "prototype_hash": "2948310585",
+            "flaw_hash": "1296800380",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "876955965",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "4178054427",
+            "cause_hash2_ordinal": "1"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/601.html"
+      },
+      {
+         "title": "set",
+         "issue_id": 1001,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Credentials",
+         "cwe_id": "798",
+         "display_text": "\u003cspan\u003eThe application contains hard-coded information that may contain credentials to an external service.  The use of hard-coded credentials significantly increases the possibility that the account being protected will be compromised. set\u003c/span\u003e \u003cspan\u003eStore credentials out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/798.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "dummy.js",
+               "line": 7,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1787668339",
+            "prototype_hash": "211846691",
+            "flaw_hash": "116960928",
+            "flaw_hash_count": 2,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "474192736",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/798.html"
+      },
+      {
+         "title": "set",
+         "issue_id": 1003,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. set\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "dummy.js",
+               "line": 8,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1787668339",
+            "prototype_hash": "211846691",
+            "flaw_hash": "116960928",
+            "flaw_hash_count": 2,
+            "flaw_hash_ordinal": 2,
+            "cause_hash": "474192736",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "set",
+         "issue_id": 1002,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Credentials",
+         "cwe_id": "798",
+         "display_text": "\u003cspan\u003eThe application contains hard-coded information that may contain credentials to an external service.  The use of hard-coded credentials significantly increases the possibility that the account being protected will be compromised. set\u003c/span\u003e \u003cspan\u003eStore credentials out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/798.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "dummy.js",
+               "line": 11,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1787668339",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2250198598",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "2337163260",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/798.html"
+      },
+      {
+         "title": "set",
+         "issue_id": 1004,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. set\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "dummy.js",
+               "line": 12,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1787668339",
+            "prototype_hash": "211846691",
+            "flaw_hash": "2792568717",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3566002114",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "string literal",
+         "issue_id": 1038,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. string literal\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "config.js",
+               "line": 4,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1132006285",
+            "prototype_hash": "211846691",
+            "flaw_hash": "3371094502",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "4223305714",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "string literal",
+         "issue_id": 1037,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. string literal\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "config.js",
+               "line": 12,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1132006285",
+            "prototype_hash": "211846691",
+            "flaw_hash": "4107234028",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3800989074",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "string literal",
+         "issue_id": 1036,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "taint",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. string literal\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "config.js",
+               "line": 20,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "1132006285",
+            "prototype_hash": "211846691",
+            "flaw_hash": "715618961",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "3461748772",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      },
+      {
+         "title": "set",
+         "issue_id": 1000,
+         "gob": "B",
+         "severity": 3,
+         "issue_type_id": "crypto",
+         "issue_type": "Use of Hard-coded Password",
+         "cwe_id": "259",
+         "display_text": "\u003cspan\u003eThis variable assignment uses a hard-coded password that may compromise system security in a way that cannot be easily remedied.  The use of a hard-coded password significantly increases the possibility that the account being protected will be compromised.  Moreover, the password cannot be changed without patching the software.  If a hard-coded password is compromised in a commercial product, all deployed instances may be vulnerable to attack.  In some cases, this finding may indicate a reference to a password (e.g. the name of a key in a properties file) rather than an actual password. set\u003c/span\u003e \u003cspan\u003eStore passwords out-of-band from the application code.  Follow best practices for protecting credentials stored in locations such as configuration or properties files. An HSM may be appropriate for particularly sensitive credentials.\u003c/span\u003e \u003cspan\u003eReferences: \u003ca href=\"https://cwe.mitre.org/data/definitions/259.html\"\u003eCWE\u003c/a\u003e\u003c/span\u003e",
+         "files": {
+            "source_file": {
+               "file": "app.js",
+               "line": 44,
+               "function_name": "!main",
+               "qualified_function_name": "!main",
+               "function_prototype": "!main() : void",
+               "scope": "UNKNOWN"
+            }
+         },
+         "flaw_match": {
+            "procedure_hash": "2310390074",
+            "prototype_hash": "211846691",
+            "flaw_hash": "1499932793",
+            "flaw_hash_count": 1,
+            "flaw_hash_ordinal": 1,
+            "cause_hash": "1161373643",
+            "cause_hash_count": 1,
+            "cause_hash_ordinal": 1,
+            "cause_hash2": "0",
+            "cause_hash2_ordinal": "0"
+         },
+         "stack_dumps": {},
+         "flaw_details_link": "https://downloads.veracode.com/securityscan/cwe/v4/java/259.html"
+      }
+   ],
+   "selected_modules": []
+}
